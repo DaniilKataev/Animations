@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --index: calc(1vw + 1vh);
+    --gap: .5em;
+    --color-dark: #000;
+}
+
+body {
+    overflow: hidden;
+    background-color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    text-transform: uppercase;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: .1em;
+    font-size: calc(var(--index) * 3);
+    position: absolute;
+    font-weight: 200;
+    text-align: center;
+    opacity: .9;
+    margin-top: 0.2em;
+}
+
+.header span {
+    display: block;
+    font-family: Helvetica, sans-serif;
+    font-size: calc(var(--index) * .75);
+    margin-top: 5px;
+}
+
+.loaded .header span {
+    display: none;
+}
+ 
+.loaded .gallery {
+    opacity: 1;
+}
+
+.gallery {
+    width: 30vw;
+    column-width: 2em;
+    gap: var(--gap);
+    transform: scale(8.2);
+    will-change: transform;
+    transition: 1s cubic-bezier(.075, 1, .25, 1), opacity 1s;
+}
+
+.gallery__item {
+    margin-bottom: var(--gap);
+    will-change: transform; /* Чтобы изображения не размывались */
+    transform: scale(1.001);
+    transition: .3s ;
+}
+
+.gallery__item:hover {
+    transform: scale(1.03);
+}
+
+.gallery__item img{
+    display: block; /* Расстояние между изображениями стали одинаковыми */
+    width: 100%;
+}
+
+/*Dark mode*/
+/* 
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--color-dark);
+    }
+    .header {
+        filter: invert(100%);
+    }
+} */
