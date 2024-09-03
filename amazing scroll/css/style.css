@@ -41,7 +41,6 @@ body, html {
     transition: transform var(--transition);
     will-change: transform;
     box-shadow: rgb(0 0 0 / .2) 0 0 30px 10px;
-
 }
 
 .slider__item:hover {
